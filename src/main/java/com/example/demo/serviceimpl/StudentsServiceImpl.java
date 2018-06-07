@@ -107,4 +107,13 @@ public class StudentsServiceImpl implements StudentsService{
         }
         return students2;
     }
+
+    @Override
+    public List<Students> selectdesc() {
+        StudentsExample example = new StudentsExample();
+        example.createCriteria().andSnameIsNotNull();
+        example.setOrderByClause("classes desc");
+        List<Students> students = studentsMapper.selectByExample(example);
+        return students;
+    }
 }

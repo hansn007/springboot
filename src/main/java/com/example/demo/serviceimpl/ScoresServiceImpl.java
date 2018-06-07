@@ -41,4 +41,14 @@ public class ScoresServiceImpl implements ScoresService {
         }
         return courAndScos;
     }
+
+    @Override
+    public List<Scores> selectscore() {
+        ScoresExample example = new ScoresExample();
+        example.createCriteria().andCnoIsNotNull();
+        example.setOrderByClause("cno asc");
+        example.setOrderByClause("degree desc");
+        List<Scores> scores = scoresMapper.selectByExample(example);
+        return scores;
+    }
 }

@@ -39,5 +39,8 @@ public class StudentsController {
     public String getall(Students students){
         return JSON.toJSONString(studentsService.selectall(students));
     }
-
+    @RequestMapping(value = "getstudesc")
+    public String getstudesc(){
+        return JSON.toJSONString(studentsService.selectdesc());
+    }
 }

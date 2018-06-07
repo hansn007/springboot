@@ -17,4 +17,6 @@ public interface StudentsService {
 
    List<Students> selectall(Students students);
 
+   List<Students> selectdesc();
+
 }

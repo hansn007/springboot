@@ -17,4 +17,8 @@ public class ScoresController {
         return JSON.toJSONString(scoresService.selectscores());
     }
 
+    @RequestMapping(value = "/getscore")
+    public String getscore(){
+        return JSON.toJSONString(scoresService.selectscore());
+    }
 }
