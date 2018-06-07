@@ -1,5 +1,9 @@
 package com.example.demo.service;
 
-public interface ScoresService {
+import com.example.demo.entity.CourAndSco;
 
+import java.util.List;
+
+public interface ScoresService {
+    List<CourAndSco> selectscores();
 }
