@@ -30,4 +30,12 @@ public class ScoresController {
     public String getjuti(){
         return JSON.toJSONString(scoresService.selectjuti());
     }
+    @RequestMapping(value="getavg")
+    public String getavg(){
+        return JSON.toJSONString(scoresService.selectavg());
+    }
+    @RequestMapping(value = "getteascores")
+    public String getteascores(){
+        return JSON.toJSONString(scoresService.selectteascore());
+    }
 }

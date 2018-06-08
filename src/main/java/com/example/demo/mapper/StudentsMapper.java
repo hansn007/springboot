@@ -21,4 +21,8 @@ public interface StudentsMapper {
     int updateByExampleSelective(@Param("record") Students record, @Param("example") StudentsExample example);
 
     int updateByExample(@Param("record") Students record, @Param("example") StudentsExample example);
+
+    List<Students> selectnv();
+
+    List<Students> selectclasses();
 }

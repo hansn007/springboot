@@ -25,4 +25,8 @@ public interface ScoresMapper {
     List<Scores> selectbetween();
 
     List<Scores> selectjuti();
+
+    List<Scores> selectavg();
+
+    List<Scores> selectteascores();
 }

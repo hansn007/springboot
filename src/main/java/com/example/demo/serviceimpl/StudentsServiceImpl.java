@@ -116,4 +116,16 @@ public class StudentsServiceImpl implements StudentsService{
         List<Students> students = studentsMapper.selectByExample(example);
         return students;
     }
+
+    @Override
+    public List<Students> selectnv() {
+        List<Students> students = studentsMapper.selectnv();
+        return students;
+    }
+
+    @Override
+    public List<Students> selectclasses() {
+        List<Students> students = studentsMapper.selectclasses();
+        return students;
+    }
 }

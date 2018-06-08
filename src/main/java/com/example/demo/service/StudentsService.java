@@ -19,4 +19,8 @@ public interface StudentsService {
 
    List<Students> selectdesc();
 
+   List<Students> selectnv();
+
+   List<Students> selectclasses();
+
 }

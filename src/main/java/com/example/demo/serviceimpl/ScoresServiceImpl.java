@@ -63,4 +63,16 @@ public class ScoresServiceImpl implements ScoresService {
         List<Scores> scores = scoresMapper.selectjuti();
         return scores;
     }
+
+    @Override
+    public List<Scores> selectavg() {
+        List<Scores> scores = scoresMapper.selectavg();
+        return scores;
+    }
+
+    @Override
+    public List<Scores> selectteascore() {
+        List<Scores> scores = scoresMapper.selectteascores();
+        return scores;
+    }
 }

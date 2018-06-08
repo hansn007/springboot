@@ -67,6 +67,9 @@
   <sql id="Base_Column_List" >
     cno, cname, tno
   </sql>
+  <select id="selectcno" parameterType="map" resultType="com.example.demo.domain.Courses">
+    select distinct(cno) from scores where exists(select cno from scores where degree>=85)
+  </select>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.example.demo.domain.CoursesExample" >
     select
     <if test="distinct" >

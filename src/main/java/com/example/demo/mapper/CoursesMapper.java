@@ -21,4 +21,7 @@ public interface CoursesMapper {
     int updateByExampleSelective(@Param("record") Courses record, @Param("example") CoursesExample example);
 
     int updateByExample(@Param("record") Courses record, @Param("example") CoursesExample example);
+
+    List<Courses> selectcno();
+
 }

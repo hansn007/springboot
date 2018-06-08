@@ -15,6 +15,9 @@ public class CourseController {
     @RequestMapping(value="getcno")
     public String stucno(){
         return JSON.toJSONString(coursesService.selectScores());
-
+    }
+    @RequestMapping(value = "getcoucno")
+    public String getcoucno(){
+        return JSON.toJSONString(coursesService.selectcno());
     }
 }

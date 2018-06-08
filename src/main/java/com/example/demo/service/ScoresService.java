@@ -13,4 +13,8 @@ public interface ScoresService {
     List<Scores> selectbetween();
 
     List<Scores> selectjuti();
+
+    List<Scores> selectavg();
+
+    List<Scores> selectteascore();
 }

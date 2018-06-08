@@ -43,4 +43,10 @@ public class CoursesServiceImpl implements CoursesService{
         }
         return studentScores;
     }
+
+    @Override
+    public List<Courses> selectcno() {
+        List<Courses> courses = coursesMapper.selectcno();
+        return courses;
+    }
 }

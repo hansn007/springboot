@@ -43,4 +43,12 @@ public class StudentsController {
     public String getstudesc(){
         return JSON.toJSONString(studentsService.selectdesc());
     }
+    @RequestMapping(value = "getnv")
+    public String getnv(){
+        return JSON.toJSONString(studentsService.selectnv());
+    }
+    @RequestMapping(value = "getclasses")
+    public String getclasses(){
+        return JSON.toJSONString(studentsService.selectclasses());
+    }
 }

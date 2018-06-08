@@ -85,8 +85,14 @@
   <select id="selectbetween" parameterType="map" resultType="com.example.demo.domain.Scores">
     select * from scores where degree between ${60} and ${80}
   </select>
+  <select id="selectavg" parameterType="String" resultType="com.example.demo.domain.Scores">
+    select avg(degree) from scores where cno = '3-105';
+  </select>
   <select id="selectjuti" resultType="com.example.demo.domain.Scores" parameterType="map">
     select * from scores where degree in (${85},${86},${88})
+  </select>
+  <select id="selectteascores" parameterType="map" resultType="com.example.demo.domain.Scores">
+    select cname,degree from scores inner join courses on(scores.cno=courses.cno) inner join teachers on(courses.tno=teachers.tno) where teachers.depart='计算机系'
   </select>
   <delete id="deleteByExample" parameterType="com.example.demo.domain.ScoresExample" >
     delete from scores
