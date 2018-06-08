@@ -9,4 +9,8 @@ public interface ScoresService {
     List<CourAndSco> selectscores();
 
     List<Scores> selectscore();
+
+    List<Scores> selectbetween();
+
+    List<Scores> selectjuti();
 }

@@ -21,4 +21,13 @@ public class ScoresController {
     public String getscore(){
         return JSON.toJSONString(scoresService.selectscore());
     }
+
+    @RequestMapping(value = "getbetween")
+    public String getbetween(){
+        return JSON.toJSONString(scoresService.selectbetween());
+    }
+    @RequestMapping(value = "getjuti")
+    public String getjuti(){
+        return JSON.toJSONString(scoresService.selectjuti());
+    }
 }

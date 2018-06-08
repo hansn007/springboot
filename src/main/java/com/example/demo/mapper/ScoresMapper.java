@@ -21,4 +21,8 @@ public interface ScoresMapper {
     int updateByExampleSelective(@Param("record") Scores record, @Param("example") ScoresExample example);
 
     int updateByExample(@Param("record") Scores record, @Param("example") ScoresExample example);
+
+    List<Scores> selectbetween();
+
+    List<Scores> selectjuti();
 }

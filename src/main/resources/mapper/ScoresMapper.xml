@@ -82,6 +82,12 @@
       order by ${orderByClause}
     </if>
   </select>
+  <select id="selectbetween" parameterType="map" resultType="com.example.demo.domain.Scores">
+    select * from scores where degree between ${60} and ${80}
+  </select>
+  <select id="selectjuti" resultType="com.example.demo.domain.Scores" parameterType="map">
+    select * from scores where degree in (${85},${86},${88})
+  </select>
   <delete id="deleteByExample" parameterType="com.example.demo.domain.ScoresExample" >
     delete from scores
     <if test="_parameter != null" >

@@ -51,4 +51,16 @@ public class ScoresServiceImpl implements ScoresService {
         List<Scores> scores = scoresMapper.selectByExample(example);
         return scores;
     }
+
+    @Override
+    public List<Scores> selectbetween() {
+        List<Scores> scores = scoresMapper.selectbetween();
+        return scores;
+    }
+
+    @Override
+    public List<Scores> selectjuti() {
+        List<Scores> scores = scoresMapper.selectjuti();
+        return scores;
+    }
 }
