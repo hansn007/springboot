@@ -128,4 +128,23 @@ public class StudentsServiceImpl implements StudentsService{
         List<Students> students = studentsMapper.selectclasses();
         return students;
     }
+
+    @Override
+    public List<Students> selectsamesname() {
+        List<Students> students = studentsMapper.selectsname();
+        return null;
+    }
+
+    @Override
+    public List<Students> selectdegreeavg() {
+        List<Students> students = studentsMapper.selectdegreeavg();
+        return students;
+    }
+
+    @Override
+    public int countByExample(Students students) {
+        StudentsExample example = new StudentsExample();
+        int count = studentsMapper.countByExample(example);
+        return count;
+    }
 }

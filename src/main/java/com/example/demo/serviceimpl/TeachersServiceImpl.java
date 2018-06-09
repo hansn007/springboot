@@ -90,4 +90,17 @@ public class TeachersServiceImpl implements TeachersService{
         }
         return teaAndCours;
     }
+
+    @Override
+    public List<Teachers> selecttnameandprof() {
+        List<Teachers> teachers = teachersMapper.selecttnameandprof();
+        return teachers;
+    }
+
+    @Override
+    public int countByExample(Teachers teachers) {
+        TeachersExample example = new TeachersExample();
+        int count = teachersMapper.countByExample(example);
+        return count;
+    }
 }

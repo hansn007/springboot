@@ -10,4 +10,6 @@ public interface CoursesService {
     List<StudentScore> selectScores();
 
     List<Courses> selectcno();
+
+    int countByExample();
 }

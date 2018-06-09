@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.example.demo.domain.Courses;
 import com.example.demo.service.CoursesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,5 +20,10 @@ public class CourseController {
     @RequestMapping(value = "getcoucno")
     public String getcoucno(){
         return JSON.toJSONString(coursesService.selectcno());
+    }
+    @RequestMapping(value = "getcoucount")
+    public int getcoucount(){
+        int count = coursesService.countByExample();
+        return count;
     }
 }

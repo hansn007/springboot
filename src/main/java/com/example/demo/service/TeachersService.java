@@ -15,4 +15,8 @@ public interface TeachersService {
     List<StuAndTea> selecetstuandtea();
 
     List<TeaAndCour> selectteachers();
+
+    List<Teachers> selecttnameandprof();
+
+    int countByExample(Teachers teachers);
 }

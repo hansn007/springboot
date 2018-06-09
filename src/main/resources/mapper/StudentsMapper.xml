@@ -75,6 +75,12 @@
   <select id="selectclasses" parameterType="map" resultType="com.example.demo.domain.Students">
     select * from students where classes in('95033','95031')
   </select>
+  <select id="selectsname" parameterType="map" resultType="com.example.demo.domain.Students">
+    select sname from students where ssex=(select ssex from students where sname='李军')
+  </select>
+  <select id="selectdegreeavg" parameterType="map" resultType="com.example.demo.domain.Students">
+    select cname,avg(degree) from students inner join scores on(students.sno=scores.sno) inner join courses on(scores.cno=courses.cno) group by cname
+  </select>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.example.demo.domain.StudentsExample" >
     select
     <if test="distinct" >

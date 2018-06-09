@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.domain.Students;
+import com.example.demo.domain.StudentsExample;
 import com.example.demo.entity.StudentScore;
 import org.springframework.stereotype.Repository;
 
@@ -22,5 +23,11 @@ public interface StudentsService {
    List<Students> selectnv();
 
    List<Students> selectclasses();
+
+   List<Students> selectsamesname();
+
+   List<Students> selectdegreeavg();
+
+   int countByExample(Students students);
 
 }

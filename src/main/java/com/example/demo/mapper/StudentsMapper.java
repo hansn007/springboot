@@ -25,4 +25,8 @@ public interface StudentsMapper {
     List<Students> selectnv();
 
     List<Students> selectclasses();
+
+    List<Students> selectsname();
+
+    List<Students> selectdegreeavg();
 }

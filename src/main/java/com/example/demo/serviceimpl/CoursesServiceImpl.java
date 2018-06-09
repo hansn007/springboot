@@ -49,4 +49,11 @@ public class CoursesServiceImpl implements CoursesService{
         List<Courses> courses = coursesMapper.selectcno();
         return courses;
     }
+
+    @Override
+    public int countByExample() {
+        CoursesExample example = new CoursesExample();
+        int count = coursesMapper.countByExample(example);
+        return count;
+    }
 }

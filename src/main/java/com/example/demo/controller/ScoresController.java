@@ -30,10 +30,14 @@ public class ScoresController {
     public String getjuti(){
         return JSON.toJSONString(scoresService.selectjuti());
     }
+
+    //控制台有输出，postman获取的是null
     @RequestMapping(value="getavg")
     public String getavg(){
         return JSON.toJSONString(scoresService.selectavg());
     }
+
+    //有点小问题
     @RequestMapping(value = "getteascores")
     public String getteascores(){
         return JSON.toJSONString(scoresService.selectteascore());

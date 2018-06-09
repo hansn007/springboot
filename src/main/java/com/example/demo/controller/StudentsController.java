@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.example.demo.domain.Students;
+import com.example.demo.domain.StudentsExample;
 import com.example.demo.service.ScoresService;
 import com.example.demo.service.StudentsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,5 +51,21 @@ public class StudentsController {
     @RequestMapping(value = "getclasses")
     public String getclasses(){
         return JSON.toJSONString(studentsService.selectclasses());
+    }
+
+    //没能获取到
+    @RequestMapping(value = "/getsamename")
+    public String getsnamename(){
+        return JSON.toJSONString(studentsService.selectsamesname());
+    }
+    //控制台有输出，postman获取的是null
+    @RequestMapping(value = "/getdegreeavg")
+    public String getdegreeavg(){
+        return JSON.toJSONString(studentsService.selectdegreeavg());
+    }
+    @RequestMapping(value = "getstucount")
+    public int countByExample(Students students ){
+        int count = studentsService.countByExample(students);
+        return count;
     }
 }

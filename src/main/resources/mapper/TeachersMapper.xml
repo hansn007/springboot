@@ -85,6 +85,9 @@
       order by ${orderByClause}
     </if>
   </select>
+  <select id="selecttnameandprof" parameterType="map" resultType="com.example.demo.domain.Teachers">
+    select tname,prof from teachers where depart in('计算机系','电子工程系')
+  </select>
   <delete id="deleteByExample" parameterType="com.example.demo.domain.TeachersExample" >
     delete from teachers
     <if test="_parameter != null" >

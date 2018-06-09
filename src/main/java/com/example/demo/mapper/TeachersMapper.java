@@ -22,4 +22,6 @@ public interface TeachersMapper {
 
     int updateByExample(@Param("record") Teachers record, @Param("example") TeachersExample example);
 
+    List<Teachers> selecttnameandprof();
+
 }
