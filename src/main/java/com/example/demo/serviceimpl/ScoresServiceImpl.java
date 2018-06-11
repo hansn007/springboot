@@ -75,4 +75,16 @@ public class ScoresServiceImpl implements ScoresService {
         List<Scores> scores = scoresMapper.selectteascores();
         return scores;
     }
+
+    @Override
+    public List<Scores> selectdegreedesc() {
+        List<Scores> scores = scoresMapper.selectdegreedesc();
+        return null;
+    }
+
+    @Override
+    public List<Scores> selectrecord() {
+        List<Scores> scores = scoresMapper.selectrecord();
+        return scores;
+    }
 }

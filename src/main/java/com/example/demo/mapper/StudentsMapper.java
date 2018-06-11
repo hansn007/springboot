@@ -29,4 +29,6 @@ public interface StudentsMapper {
     List<Students> selectsname();
 
     List<Students> selectdegreeavg();
+
+    List<Students> selectsameyear();
 }

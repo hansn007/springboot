@@ -30,4 +30,6 @@ public interface StudentsService {
 
    int countByExample(Students students);
 
+   List<Students> selectsameyear();
+
 }

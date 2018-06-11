@@ -17,4 +17,8 @@ public interface ScoresService {
     List<Scores> selectavg();
 
     List<Scores> selectteascore();
+
+    List<Scores> selectdegreedesc();
+
+    List<Scores> selectrecord();
 }

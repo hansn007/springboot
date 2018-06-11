@@ -29,4 +29,8 @@ public interface ScoresMapper {
     List<Scores> selectavg();
 
     List<Scores> selectteascores();
+
+    List<Scores> selectdegreedesc();
+
+    List<Scores> selectrecord();
 }

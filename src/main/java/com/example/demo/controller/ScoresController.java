@@ -42,4 +42,14 @@ public class ScoresController {
     public String getteascores(){
         return JSON.toJSONString(scoresService.selectteascore());
     }
+
+    //控制台有输出，postman获取的是null
+    @RequestMapping(value = "getdegreedesc")
+    public String getdegreedesc(){
+        return JSON.toJSONString(scoresService.selectdegreedesc());
+    }
+    @RequestMapping(value = "getrecord")
+    public String getrecord(){
+        return JSON.toJSONString(scoresService.selectrecord());
+    }
 }

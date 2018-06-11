@@ -147,4 +147,10 @@ public class StudentsServiceImpl implements StudentsService{
         int count = studentsMapper.countByExample(example);
         return count;
     }
+
+    @Override
+    public List<Students> selectsameyear() {
+        List<Students> students = studentsMapper.selectsameyear();
+        return students;
+    }
 }

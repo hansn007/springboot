@@ -68,4 +68,8 @@ public class StudentsController {
         int count = studentsService.countByExample(students);
         return count;
     }
+    @RequestMapping(value = "getsameyear")
+    public String getsameyear(){
+        return JSON.toJSONString(studentsService.selectsameyear());
+    }
 }
