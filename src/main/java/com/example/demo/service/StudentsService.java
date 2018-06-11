@@ -32,4 +32,7 @@ public interface StudentsService {
 
    List<Students> selectsameyear();
 
+   List<Students> selectnotwang();
+
+   List<Students> selectage();
 }

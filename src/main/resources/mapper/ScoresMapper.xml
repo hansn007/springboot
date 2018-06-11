@@ -82,22 +82,22 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectbetween" parameterType="map" resultType="com.example.demo.domain.Scores">
+  <select id="selectbetween" resultType="com.example.demo.domain.Scores">
     select * from scores where degree between ${60} and ${80}
   </select>
   <select id="selectavg" parameterType="String" resultType="com.example.demo.domain.Scores">
     select avg(degree) from scores where cno = '3-105';
   </select>
-  <select id="selectjuti" resultType="com.example.demo.domain.Scores" parameterType="map">
+  <select id="selectjuti" resultType="com.example.demo.domain.Scores">
     select * from scores where degree in (${85},${86},${88})
   </select>
-  <select id="selectdegreedesc" parameterType="map" resultType="com.example.demo.domain.Scores">
+  <select id="selectdegreedesc" resultType="com.example.demo.domain.Scores">
     select cno,sno,degree from scores where cno='3-105' and degree > any(select degree from scores where cno='3-245') order by degree desc
   </select>
-  <select id="selectteascores" parameterType="map" resultType="com.example.demo.domain.Scores">
+  <select id="selectteascores" resultType="com.example.demo.domain.Scores">
     select cname,degree from scores inner join courses on(scores.cno=courses.cno) inner join teachers on(courses.tno=teachers.tno) where teachers.depart='计算机系'
   </select>
-  <select id="selectrecord" parameterType="map" resultType="com.example.demo.domain.Scores">
+  <select id="selectrecord" resultType="com.example.demo.domain.Scores">
     select s1.sno,s1.degree from scores as s1 inner join scores as s2 on(s1.cno=s2.cno and s1.degree>s2.degree) where s1.cno='3-105' and s2.sno='109'
   </select>
   <delete id="deleteByExample" parameterType="com.example.demo.domain.ScoresExample" >

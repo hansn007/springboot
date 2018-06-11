@@ -72,4 +72,12 @@ public class StudentsController {
     public String getsameyear(){
         return JSON.toJSONString(studentsService.selectsameyear());
     }
+    @RequestMapping(value = "notwang")
+    public String selectnotwang(){
+        return JSON.toJSONString(studentsService.selectnotwang());
+    }
+    @RequestMapping(value = "getage")
+    public String getage(){
+        return JSON.toJSONString(studentsService.selectage());
+    }
 }

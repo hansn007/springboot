@@ -1,5 +1,7 @@
 package com.example.demo.serviceimpl;
 
+import ch.qos.logback.core.joran.spi.ConsoleTarget;
+import ch.qos.logback.core.net.SyslogOutputStream;
 import com.example.demo.domain.*;
 import com.example.demo.entity.StudentScore;
 import com.example.demo.mapper.CoursesMapper;
@@ -151,6 +153,19 @@ public class StudentsServiceImpl implements StudentsService{
     @Override
     public List<Students> selectsameyear() {
         List<Students> students = studentsMapper.selectsameyear();
+        return students;
+    }
+
+    @Override
+    public List<Students> selectnotwang() {
+        System.out.println(studentsMapper.selectnotwang());
+        List<Students> students = studentsMapper.selectnotwang();
+        return students;
+    }
+
+    @Override
+    public List<Students> selectage() {
+        List<Students> students = studentsMapper.selectage();
         return students;
     }
 }

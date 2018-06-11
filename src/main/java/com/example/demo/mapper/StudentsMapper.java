@@ -31,4 +31,8 @@ public interface StudentsMapper {
     List<Students> selectdegreeavg();
 
     List<Students> selectsameyear();
+
+    List<Students> selectnotwang();
+
+    List<Students> selectage();
 }
