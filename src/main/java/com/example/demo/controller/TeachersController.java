@@ -33,7 +33,7 @@ public class TeachersController {
     }
 
     //没获取到
-    @RequestMapping(value = "/gettnameandprof")
+    @RequestMapping(value = "gettnameandprof")
     public String gettnameandprof(){
         return JSON.toJSONString(teachersService.selecttnameandprof());
     }
@@ -41,5 +41,9 @@ public class TeachersController {
     public int getteacount(Teachers teachers){
         int count = teachersService.countByExample(teachers);
         return count;
+    }
+    @RequestMapping(value = "getnottea")
+    public String getteacount(){
+        return JSON.toJSONString(teachersService.selectnottea());
     }
 }

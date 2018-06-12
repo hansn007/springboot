@@ -24,4 +24,6 @@ public interface TeachersMapper {
 
     List<Teachers> selecttnameandprof();
 
+    List<Teachers> selectnottea();
+
 }

@@ -90,7 +90,6 @@ public class StudentsServiceImpl implements StudentsService{
             students3.setSsex(stu.getSsex());
             students2.add(students3);
         }
-
         return students2;
     }
 
@@ -102,9 +101,9 @@ public class StudentsServiceImpl implements StudentsService{
         List<Students> students2 = new ArrayList<Students>();
         for (Students stu : students1){
             Students students3 = new Students();
+            students3.setClasses(stu.getClasses());
             students3.setSname(stu.getSname());
             students3.setSsex(stu.getSsex());
-            students3.setClasses(stu.getClasses());
             students2.add(students3);
         }
         return students2;

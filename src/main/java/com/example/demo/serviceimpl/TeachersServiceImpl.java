@@ -103,4 +103,10 @@ public class TeachersServiceImpl implements TeachersService{
         int count = teachersMapper.countByExample(example);
         return count;
     }
+
+    @Override
+    public List<Teachers> selectnottea() {
+        List<Teachers> teachers = teachersMapper.selectnottea();
+        return teachers;
+    }
 }

@@ -19,4 +19,6 @@ public interface TeachersService {
     List<Teachers> selecttnameandprof();
 
     int countByExample(Teachers teachers);
+
+    List<Teachers> selectnottea();
 }
