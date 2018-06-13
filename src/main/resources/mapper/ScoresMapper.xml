@@ -85,7 +85,7 @@
   <select id="selectbetween" resultType="com.example.demo.domain.Scores">
     select * from scores where degree between ${60} and ${80}
   </select>
-  <select id="selectavg" parameterType="String" resultType="com.example.demo.domain.Scores">
+  <select id="selectavg" resultType="com.example.demo.domain.Scores">
     select avg(degree) from scores where cno = '3-105';
   </select>
   <select id="selectjuti" resultType="com.example.demo.domain.Scores">

@@ -1,20 +1,19 @@
 package com.example.demo.serviceimpl;
 
-import com.example.demo.domain.Courses;
-import com.example.demo.domain.CoursesExample;
-import com.example.demo.domain.Scores;
-import com.example.demo.domain.ScoresExample;
+import com.example.demo.domain.*;
 import com.example.demo.entity.CourAndSco;
 import com.example.demo.mapper.CoursesMapper;
 import com.example.demo.mapper.ScoresMapper;
 import com.example.demo.service.ScoresService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@Transactional
 public class ScoresServiceImpl implements ScoresService {
     @Autowired
     private CoursesMapper coursesMapper;
@@ -60,7 +59,7 @@ public class ScoresServiceImpl implements ScoresService {
 
     @Override
     public List<Scores> selectjuti() {
-        List<Scores> scores = scoresMapper.selectjuti();
+        List<Scores> scores = scoresMapper.selectavg();
         return scores;
     }
 
@@ -79,7 +78,7 @@ public class ScoresServiceImpl implements ScoresService {
     @Override
     public List<Scores> selectdegreedesc() {
         List<Scores> scores = scoresMapper.selectdegreedesc();
-        return null;
+        return scores;
     }
 
     @Override

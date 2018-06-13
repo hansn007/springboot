@@ -80,4 +80,26 @@ public class StudentsController {
     public String getage(){
         return JSON.toJSONString(studentsService.selectage());
     }
+    @RequestMapping(value = "updatesbirthday")
+    public int updateSbirthday(Students students){
+        return studentsService.updateSbirthday(students);
+    }
+
+    //有点小问题
+    @RequestMapping(value = "insertstudent")
+    public int insertStudents(Students students){
+        return studentsService.insertStudent(students);
+    }
+    @RequestMapping(value = "insertstudents")
+    public int insertstudents(Students students){
+        return studentsService.insertStudents(students);
+    }
+    @RequestMapping(value = "delectstudent")
+    public int delectstudent(Students students){
+        return studentsService.deleteStudent(students);
+    }
+    @RequestMapping(value = "delectbyexample")
+    public int delectByExample(StudentsExample example){
+        return studentsService.deleteByExample(example);
+    }
 }

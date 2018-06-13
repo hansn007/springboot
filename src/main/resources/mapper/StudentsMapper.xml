@@ -85,13 +85,13 @@
     select sname from students where ssex=(select ssex from students where sname='李军')
   </select>
   <select id="selectdegreeavg" resultType="com.example.demo.domain.Students">
-    select cname as cname,avg(degree) as degrees from students inner join scores on(students.sno=scores.sno) inner join courses on(scores.cno=courses.cno) group by cname
+    select cname,avg(degree) from students inner join scores on(students.sno=scores.sno) inner join courses on(scores.cno=courses.cno) where classes='95033' group by  cname
   </select>
   <select id="selectsameyear" resultType="com.example.demo.domain.Students">
     select s1.sno,s1.sname,s1.sbirthday from students as s1 inner join students as s2 on(year(s1.sbirthday)=year(s2.sbirthday)) where s2.sno='108'
   </select>
   <select id="selectnotwang" resultType="com.example.demo.domain.Students">
-    select * from students where sname not like '王%'
+    select * from students where sname not like '王%';
   </select>
   <select id="selectage" resultType="com.example.demo.domain.Students">
     select sname,year(now())-year(sbirthday) as sage from students
@@ -123,6 +123,9 @@
     values (#{sno,jdbcType=VARCHAR}, #{sname,jdbcType=VARCHAR}, #{ssex,jdbcType=VARCHAR}, 
       #{sbirthday,jdbcType=TIMESTAMP}, #{classes,jdbcType=VARCHAR})
   </insert>
+  <update id="updateSbirthday" parameterType="map">
+    update students set sbirthday = '1974-09-03 00:00:00.000000' where sno = '103'
+  </update>
   <insert id="insertSelective" parameterType="com.example.demo.domain.Students" >
     insert into students
     <trim prefix="(" suffix=")" suffixOverrides="," >
@@ -189,7 +192,13 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByExample" parameterType="map" >
+  <insert id="insertStudent" parameterType="map">
+    insert into students (sno,sname,ssex,sbirthday,classes) values ("110","aaa","man",'1974-09-03 00:00:00.000000',"95031")
+  </insert>
+  <delete id="deleteStudent" parameterType="map">
+    delete from students where sno = #{sno}
+  </delete>
+  <update id="updateByExample" parameterType="map">
     update students
     set sno = #{record.sno,jdbcType=VARCHAR},
       sname = #{record.sname,jdbcType=VARCHAR},
@@ -200,4 +209,5 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
+
 </mapper>

@@ -35,4 +35,14 @@ public interface StudentsService {
    List<Students> selectnotwang();
 
    List<Students> selectage();
+
+   int updateSbirthday(Students students);
+
+   int insertStudent(Students students);
+
+   int insertStudents(Students Students);
+
+   int deleteStudent(Students students);
+
+   int deleteByExample(StudentsExample example);
 }

@@ -35,4 +35,10 @@ public interface StudentsMapper {
     List<Students> selectnotwang();
 
     List<Students> selectage();
+
+    int updateSbirthday(Students students);
+
+    int insertStudent(Students Students);
+
+    int deleteStudent(Students students);
 }
