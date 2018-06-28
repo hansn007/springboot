@@ -164,13 +164,12 @@ public class StudentsServiceImpl implements StudentsService{
     @Override
     public int insertStudent(Students students) {
         Students students1 = new Students();
-        students.setSno(students1.getSno());
-        students.setSname(students1.getSname());
-        students.setSsex(students1.getSsex());
-        students.setSbirthday(students1.getSbirthday());
-        students.setClasses(students1.getClasses());
-        int result = studentsMapper.insert(students);
-        return result;
+        students1.setSno(students.getSno());
+        students1.setSname(students.getSname());
+        students1.setSsex(students.getSsex());
+        students1.setSbirthday(students.getSbirthday());
+        students1.setClasses(students.getClasses());
+        return studentsMapper.insert(students);
     }
 
     @Override
@@ -183,10 +182,16 @@ public class StudentsServiceImpl implements StudentsService{
     public int deleteStudent(Students students) {
         Students students1 = new Students();
         students1.setSno(students.getSno());
-        return studentsMapper.deleteStudent(students1);
+        return studentsMapper.deleteStudent(students);
     }
     @Override
     public int deleteByExample(StudentsExample example) {
         return studentsMapper.deleteByExample(example);
+    }
+
+    @Override
+    public List<Students> selectages() {
+        List<Students> students = studentsMapper.selectages();
+        return students;
     }
 }

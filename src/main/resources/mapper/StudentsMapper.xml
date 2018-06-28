@@ -84,8 +84,10 @@
   <select id="selectsname"  resultType="com.example.demo.domain.Students">
     select sname from students where ssex=(select ssex from students where sname='李军')
   </select>
+
   <select id="selectdegreeavg" resultType="com.example.demo.domain.Students">
     select cname,avg(degree) from students inner join scores on(students.sno=scores.sno) inner join courses on(scores.cno=courses.cno) where classes='95033' group by  cname
+
   </select>
   <select id="selectsameyear" resultType="com.example.demo.domain.Students">
     select s1.sno,s1.sname,s1.sbirthday from students as s1 inner join students as s2 on(year(s1.sbirthday)=year(s2.sbirthday)) where s2.sno='108'
@@ -96,7 +98,10 @@
   <select id="selectage" resultType="com.example.demo.domain.Students">
     select sname,year(now())-year(sbirthday) as sage from students
   </select>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.example.demo.domain.StudentsExample" >
+  <select id="selectages" resultType="com.example.demo.domain.Students">
+    select sname,year(now())-year(sbirthday) as sage from students
+  </select>
+    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.example.demo.domain.StudentsExample" >
     select
     <if test="distinct" >
       distinct

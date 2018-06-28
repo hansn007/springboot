@@ -41,4 +41,7 @@ public interface StudentsMapper {
     int insertStudent(Students Students);
 
     int deleteStudent(Students students);
-}
+
+    List<Students> selectages();
+
+    }

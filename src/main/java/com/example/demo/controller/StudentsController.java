@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping(value="/")
@@ -101,5 +103,9 @@ public class StudentsController {
     @RequestMapping(value = "delectbyexample")
     public int delectByExample(StudentsExample example){
         return studentsService.deleteByExample(example);
+    }
+    @RequestMapping(value = "getages")
+    public String selectages(){
+        return JSON.toJSONString(studentsService.selectages());
     }
 }

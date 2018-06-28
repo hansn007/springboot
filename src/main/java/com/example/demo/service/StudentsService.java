@@ -45,4 +45,7 @@ public interface StudentsService {
    int deleteStudent(Students students);
 
    int deleteByExample(StudentsExample example);
+
+   List<Students> selectages();
+
 }
