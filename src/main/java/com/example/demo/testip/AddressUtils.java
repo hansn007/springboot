@@ -10,7 +10,7 @@ public class AddressUtils {
                   // 测试ip 221.232.245.73 湖北武汉
                   //String ip = "221.232.245.73";
                   //测试其他城市
-                    String ip = "123.55.255.255";
+                    String ip = "114.80.166.240";
         AddressUtils addressUtils = new AddressUtils();
         String address = "";
                   try {
