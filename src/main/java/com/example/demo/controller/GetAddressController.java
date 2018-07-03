@@ -31,12 +31,10 @@ public class GetAddressController {
             strIP = strIP.substring(strIP.indexOf("：") + 1);
             String province = strIP.substring(6, strIP.indexOf("省"));
             String city = strIP.substring(strIP.indexOf("省") + 1, strIP.indexOf("市"));
-            System.out.println(province);
-            System.out.println(city);
 
         } catch (IOException e) {
             return "读取失败";
         }
-        return null;
+       return null;
     }
 }
